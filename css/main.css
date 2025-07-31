@@ -20,19 +20,13 @@ body {
 }
 
 * {
-	/*margin: 0px;
-	padding: 0px;*/
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
 }
 
 #container {
 	width: 100%;
 	/* temp */
-	height: calc(100% - 20px); 
+	height: calc(100% - 20px);
 }
 
 #cube-stage{
@@ -43,21 +37,13 @@ body {
 	height: 600px;
 	margin: 20px 0px 0px -300px;
 	overflow: visible;
-	-webkit-perspective: 1000px;
-	-moz-perspective: 1000px;
-	-ms-perspective: 1000px;
-	-o-perspective: 1000px;
 	perspective: 1000px;
-	-webkit-perspective-origin: 50% 50%;
-	-moz-perspective-origin: 50% 50%;
-	-o-perspective-origin: 50% 50%;
-	-ms-perspective-origin: 50% 50%;
 	perspective-origin: 50% 50%;
 }
 
 .cube-reflection {
-	-webkit-box-reflect:below -50px
-	-webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(#ffffff));
+	box-reflect:below -50px
+	gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(#ffffff));
 }
 
 #cube{
@@ -66,49 +52,25 @@ body {
 	height: 0px;
 	margin-top: 0px;
 	margin-left: 0px;
-	top: 50%; 
+	top: 50%;
 	left: 50%;
-	cursor: pointer;
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	-ms-transform-style: preserve-3d;
-	-o-transform-style: preserve-3d;
+	cursor: grab;
 	transform-style: preserve-3d;
-	/*-webkit-transform: rotate3d(1, 0, 0, -40deg);
-	-moz-transform: rotate3d(1, 0, 0, -40deg);
-	-ms-transform: rotate3d(1, 0, 0, -40deg);
-	-o-transform: rotate3d(1, 0, 0, -40deg);
-	transform: rotate3d(1, 0, 0, -40deg);*/
 }
 
 #cube div{
 	position: absolute;
-	top: 50%; 
+	top: 50%;
 	left: 50%;
 	border: solid 5px rgba(255, 0, 78, 0.7);
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7), inset 0px 0px 15px rgba(0, 0, 0, 0.7);
-	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7), inset 0px 0px 15px rgba(0, 0, 0, 0.7);
-	-o-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7), inset 0px 0px 15px rgba(0, 0, 0, 0.7);
-	-ms-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7), inset 0px 0px 15px rgba(0, 0, 0, 0.7);
 	box-shadow:inset 0px 0px 15px rgba(0, 0, 0, 0.7), 0px 0px 15px rgba(0, 0, 0, 0.7);
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	-ms-transform-style: preserve-3d;
-	-o-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-
 	transition-timing-function: ease-out;
 	transition: 1s;
 }
 
 .backface-visibility {
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	-ms-backface-visibility: hidden;
-	-o-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
@@ -124,7 +86,7 @@ body {
 	z-index: 100;
 	margin: 0 auto;
 	padding: 5px 20px;
-	-webkit-border-radius: 10px;
+	border-radius: 10px;
 	background-color: rgba(255, 0, 78, 1);
 }
 
