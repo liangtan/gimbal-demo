@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Gimbal</title>
+
+	<script type="text/javascript" src="./js/gimbal_min.js"></script>
+	<script type="text/javascript" src="./js/main_min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./css/loading.css">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+
+<body>
+	<div id="container">
+		<div id="sphere-stage" class="sphere-reflection">
+			<div id="sphere" class="gimbal"></div>
+		</div>
+
+		<div id="cube-stage" class="cube-reflection">
+			<div id="cube" class="gimbal">
+				<div id="top">
+					<!-- <span>top</span> -->
+				</div>
+				<div id="bottom">
+					<!-- <span>bottom</span> -->
+				</div>
+				<div id="front">
+					<!-- <iframe width="300" height="300" src="https://www.youtube.com/embed/euz-KBBfAAo" frameborder="0" allowfullscreen></iframe> -->
+				</div>
+				<div id="back">
+				</div>
+				<div id="left">
+				</div>
+				<div id="right">
+				</div>
+			</div>
+		</div>
+
+		<form id="cube-control">
+			<div id="control-dimension">
+				<fieldset id="dimensions">
+					<legend>Dimensions:</legend>
+					<label for="width-input">Width:</label>
+					<input type="text" id="width-input" value="300">
+					<label for="height-input">Height:</label>
+					<input type="text" id="height-input" value="300">
+					<label for="length-input">Length:</label>
+					<input type="text" id="length-input" value="300">
+				</fieldset>
+
+				<div id="dimensions-buttons">
+					<button type="button" id="update-button">Update</button>
+					<button type="button" id="restore-button">Restore</button>
+				</div>
+
+				<div>
+					<button type="button" id="cube-explosion">Explode</button>
+				</div>
+			</div>
+
+			<div id="cube-control-other">
+				<div>
+					<label for="cube-allow-interaction">Allow Interaction</label>
+					<input type="checkbox" id="cube-allow-interaction" checked>
+				</div>
+				<div>
+					<label for="cube-inertia">Inertia</label>
+					<input type="checkbox" id="cube-inertia" checked>
+					<input type="range" id="cube-inertia-slider" min="1" max="100" value="10"/>
+				</div>
+				<div>
+					<label for="cube-wireframe">Wireframe</label>
+					<input type="checkbox" id="cube-wireframe" checked>
+				</div>
+				<div>
+					<label for="cube-backface-visibility">Backface Visibility</label>
+					<input type="checkbox" id="cube-backface-visibility" checked>
+				</div>
+				<div>
+					<label for="cube-show-reflection">Show Reflection</label>
+					<input type="checkbox" id="cube-show-reflection" checked>
+				</div>
+			</div>
+		</form>
+
+		<form id="sphere-control">
+			<div id="sphere-control-other">
+				<div>
+					<label for="sphere-allow-interaction">Allow Interaction</label>
+					<input type="checkbox" id="sphere-allow-interaction" checked>
+				</div>
+				<div>
+					<label for="sphere-inertia">Inertia</label>
+					<input type="checkbox" id="sphere-inertia" checked>
+					<input type="range" id="sphere-inertia-slider" min="1" max="100" value="10"/>
+				</div>
+				<div>
+					<label for="sphere-barebone-frame">Barebone Frame</label>
+					<input type="checkbox" id="sphere-barebone-frame" checked>
+				</div>
+				<div>
+					<label for="sphere-show-reflection">Show Reflection</label>
+					<input type="checkbox" id="sphere-show-reflection" checked>
+				</div>
+			</div>
+		</form>
+
+		<div id="loading">
+			<div class="ring">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,236 @@
+html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: gray;
+	background-image: -webkit-gradient(radial,
+		50% 50%, 1,
+		50% 50%, 500,
+		from(rgba(255, 255, 255, 0.5)),
+		to(rgba(255, 255, 255, 0))
+	);
+	background-repeat: no-repeat;
+	color: white;
+}
+
+* {
+	user-select: none;
+}
+
+#container {
+	width: 100%;
+	/* temp */
+	height: calc(100% - 20px);
+}
+
+/* cube */
+#cube-stage{
+	display: block;
+	position: relative;
+	left: 60%;
+	width: 600px;
+	height: 600px;
+	margin: 20px 0px 0px -300px;
+	overflow: visible;
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+}
+
+.cube-reflection {
+	-webkit-box-reflect: below -50px
+	-webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(#ffffff));
+}
+
+#cube{
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	margin-top: 0px;
+	margin-left: 0px;
+	top: 50%;
+	left: 50%;
+	cursor: grab;
+	transform-style: preserve-3d;
+}
+
+#cube div{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: solid 5px rgba(255, 0, 78, 0.7);
+	box-sizing: border-box;
+	box-shadow:inset 0px 0px 15px rgba(0, 0, 0, 0.7), 0px 0px 15px rgba(0, 0, 0, 0.7);
+	transform-style: preserve-3d;
+	transition-timing-function: ease-out;
+	transition: 1s;
+}
+
+.backface-visibility {
+	backface-visibility: hidden;
+}
+
+.cube-face-background-color {
+	background-color: rgba(255, 0, 78, 0.7);
+}
+
+#cube-control {
+	position: absolute;
+	width: 160px;
+	top: 50px;
+	right: 50px;
+	z-index: 100;
+	margin: 0 auto;
+	padding: 5px 20px;
+	border-radius: 10px;
+	background-color: rgba(255, 0, 78, 1);
+}
+
+#cube-control div {
+	margin-top: 10px;
+}
+
+#cube-control #control-dimension input {
+	background: rgba(0, 0, 0, 0);
+	border: none;
+	outline: none;
+}
+
+#cube-control #control-dimension #dimensions label {
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+#cube-control #control-dimension #dimensions input {
+	width: 50px;
+	color: white;
+	padding-top: 5px;
+}
+
+#cube-control #control-dimension #dimensions-buttons button {
+	padding: 5px 0px 5px 0px;
+	width: 70px;
+}
+
+#cube-control #cube-control-other label {
+	padding: 3px;
+}
+
+/* sphere */
+#sphere-stage {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: 200px;
+	left: 100px;
+	/*margin: 0px;*/
+	overflow: visible;
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+	/*perspective-origin: 50% 100px;*/
+
+	/*background-color: rgba(255, 0, 0, 0.3);*/
+}
+
+.sphere-reflection {
+	-webkit-box-reflect: below 10px
+	-webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(#ffffff));
+}
+
+#sphere {
+	position: absolute;
+	/*margin: 0 auto;*/
+	margin-top: 150px;
+	margin-left: 150px;
+	width: 0px;
+	height: 0px;
+	/*margin: 20px 0px 0px 0px;*/
+	cursor: grab;
+	perspective-origin: 50% 50%;
+	transform-style: preserve-3d;
+}
+
+#sphere div {
+	/*display: block;*/
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	opacity: 0.8;
+	/*background: rgba(211, 211, 211, 0.5);*/
+	border: solid 5px rgba(255, 0, 78, 0.7);
+	border-radius: 100%;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7), inset 0px 0px 15px rgba(0, 0, 0, 0.7);
+	transform-style: preserve-3d;
+	box-sizing: border-box;
+	transition-timing-function: ease-out;
+	transition: 1s;
+}
+
+#sphere .equator {
+	transform:rotateX(90deg);
+}
+
+#sphere .latitude-1 {
+	width: 150px;
+	height: 150px;
+	transform: translateX(25px) translateY(-35px) rotateX(90deg);
+}
+
+#sphere .latitude-2 {
+	width: 186px;
+	height: 186px;
+	transform: translateX(7px) translateY(-25px) rotateX(90deg);
+}
+
+#sphere .latitude-3 {
+	width: 186px;
+	height: 186px;
+	transform: translateX(7px) translateY(40px) rotateX(90deg);
+}
+
+#sphere .latitude-4 {
+	width: 150px;
+	height: 150px;
+	transform: translateX(25px) translateY(85px) rotateX(90deg);
+}
+
+.invisible {
+	display: none;
+}
+
+#sphere-control {
+	position: absolute;
+	width: 150px;
+	top: 50px;
+	left: 50px;
+	z-index: 100;
+	margin: 0 auto;
+	padding: 5px 20px;
+	-webkit-border-radius: 10px;
+	background-color: rgba(255, 0, 78, 1);
+}
+
+#sphere-control * {
+	text-align: left;
+}
+
+#sphere-control #sphere-control-other {
+	width: 100%;
+}
+
+#sphere-control #sphere-control-other label {
+	padding: 5px;
+	width: 150px;
+}
+
+#sphere-control #sphere-control-other #sphere-show-reflection {
+	padding: 3px;
+	width: 10px;
+}
